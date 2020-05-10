@@ -1,5 +1,9 @@
 language: sh
 
+branches:
+  only:
+  - gh-pages
+
 os:
   - linux
   
