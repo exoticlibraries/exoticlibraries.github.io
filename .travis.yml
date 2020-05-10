@@ -1,0 +1,19 @@
+language: sh
+
+os:
+  - linux
+  
+before_install:
+  - apt-get install -y python
+  - apt-get install -y pip
+  - pip install themata
+
+script:
+  - sphinx-build -b html -d build/doctrees  ./ build/html
+  
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash deployghpage.sh
+    on:
+       branch: master
