@@ -1,7 +1,7 @@
 
 mkdir -p dist
 cd dist/
-git clone -b gh-pages https://github.com/exoticlibraries/exoticlibraries.github.io.git
+git clone -b master https://github.com/exoticlibraries/exoticlibraries.github.io.git
 cd exoticlibraries.github.io/
 cp -r ../../build/html/* ./
 cp ../../.nojekyll ./
