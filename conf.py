@@ -30,6 +30,6 @@ html_theme_options = {
         ('fab fa-twitter', 'https://twitter.com/exoticlibs'),
         ('fab fa-github', 'https://github.com/exoticlibraries/')
     ],
-    "raw_source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/",
+    "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/",
     "text_color": "#4a4a4a"
 }
