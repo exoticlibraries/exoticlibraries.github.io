@@ -5,8 +5,8 @@
    :caption: Main
    :name: main-nav
 
+   /why
    /projects
-   /licenses
 
 .. raw:: html
 

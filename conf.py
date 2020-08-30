@@ -20,8 +20,8 @@ html_theme_options = {
     ],
     'navbar_sec_links': [
         ('Home', './index.html'),
-        ('Projects', './projects.html'),
-        ('Licenses', './licenses.html')
+        ('Why', './why.html'),
+        ('Projects', './projects.html')
     ],
     'has_left_sidebar': False,
     'has_right_sidebar': False,
