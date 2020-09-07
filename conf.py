@@ -5,38 +5,38 @@ copyright = '2020, Adewale Azeez, The Unlicense'
 author = 'Adewale Azeez'
 
 html_theme_path = [themata.get_html_theme_path()]
-html_theme = 'sugar'
+html_theme = 'water'
 master_doc = 'index'
-html_favicon = 'exoticlibs.png'
+html_favicon = 'assets/images/libcester/exoticlibs.png'
 html_static_path = ['_static']
 html_context = {
     'css_files': ['_static/css/exoticlibraries.css'],
 }
 
+extensions = ['recommonmark']
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
+
 html_theme_options = {
     'navbar_links': [
-        ('Twitter', 'https://twitter.com/exoticlibs'),
-        ('Contribute on Github', 'https://github.com/exoticlibraries/')
+        ('Why', '/pages/why'),
+        ('Projects', '/pages/projects'),
+        ('Style Guide', '/pages/style_guide'),
+        ('Contribute on Github', 'https://github.com/exoticlibraries/'),
+        ('Sponsor', '#')
     ],
-    'navbar_sec_links': [
-        ('Home', './index.html'),
-        ('Why', './why.html'),
-        ('Projects', './projects.html')
-    ],
-    'has_left_sidebar': False,
-    'has_right_sidebar': False,
-    'show_navigators': False,
+    'has_left_sidebar': True,
+    'show_navigators': True,
+    'collapsible_sidebar': False,
     'social_icons': [
         ('fab fa-twitter', 'https://twitter.com/exoticlibs'),
         ('fab fa-github', 'https://github.com/exoticlibraries/')
     ],
     "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/",
     "document_font_size": "17px",
-    "text_color": "rgb(205,202,194)",
-    "link_color": "rgb(205,202,194)",
-    "highlight_color": "rgb(15,110,157)",
-    "header_background_color": "rgb(52,55,58)",
-    "background_color": "rgb(24,26,27)",
-    "pre_background_color": "rgb(24,26,27)",
-    "pre_border_color": "rgb(84,91,98)"
+    'header_background_color': '#728aa1',
+    'menu_item_color': 'white'
 }
