@@ -43,5 +43,24 @@ html_theme_options = {
     'header_background_color': '#0f6091',
     'menu_item_color': 'white',
     'highlight_color': '#8da6b5',
-    'body_link_highlight_color': '#0f6091'
+    'body_link_highlight_color': '#0f6091',
+    "metadata": {
+        "enable": True,
+        "url": "https://exoticlibraries.github.io/",
+        "type": "website",
+        "title": "Exotic Libraries",
+        "description": "A collection of cross-platform C and C++ libraries with guaranteed functionalities across various",
+        "image": "https://avatars1.githubusercontent.com/u/57629577",
+        "keywords": "thecarisma, c, cpp, c++, framework, exoticlibraries, exotic, libraries, networking",
+        "author": "Adewale Azeez"
+    },
+    "twitter_metadata": {
+        "enable": True,
+        "card": "summary",
+        "site": "@exoticlibs",
+        "creator": "@iamthecarisma",
+        "title": "Exotic Libraries",
+        "description": "A collection of cross-platform C and C++ libraries with guaranteed functionalities across various",
+        "image": "https://avatars1.githubusercontent.com/u/57629577",
+    }
 }
