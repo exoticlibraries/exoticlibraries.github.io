@@ -35,7 +35,7 @@
 </div>
 
 <div class="project main-project">
-    <img class="logo" src="https://avatars1.githubusercontent.com/u/57629577" alt="libmetaref logo">
+    <img class="logo" src="https://raw.githubusercontent.com/exoticlibraries/libmetaref/main/docs/libmetaref.png" alt="libmetaref logo">
     <br/><span class="title">libmetaref</span>
     <hr class="project-rule"/>
     <p class="description">

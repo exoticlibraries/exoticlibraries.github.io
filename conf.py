@@ -1,8 +1,8 @@
 import themata
 
 project = 'Exotic Libraries'
-copyright = '2020, Adewale Azeez, The Unlicense'
-author = 'Adewale Azeez'
+copyright = '2020, Exotic Libraries - MIT License'
+author = 'Exotic Libraries Contributors'
 
 html_theme_path = [themata.get_html_theme_path()]
 html_theme = 'water'
@@ -25,7 +25,7 @@ html_theme_options = {
         ('Blog', 'blog/index'),
         ('Style Guide', 'pages/style_guide'),
         ('Github', 'https://github.com/exoticlibraries/'),
-        ('Support', '#')
+        ('Support', 'pages/support')
     ],
     'has_left_sidebar': True,
     'show_navigators': True,
@@ -38,7 +38,7 @@ html_theme_options = {
     'no_sidebar': [
         'pages/projects'
     ],
-    "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/blob/gh-pages/",
+    "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/edit/gh-pages/",
     "document_font_size": "15px",
     'header_background_color': '#0f6091',
     'menu_item_color': 'white',

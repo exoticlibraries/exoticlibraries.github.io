@@ -1,11 +1,11 @@
 
-
-Sep-2020
-----------
+Exotic Libraries Blog
+--------------------------
 
 .. toctree::
    :glob:
+   :maxdepth: 1
 
-   /blog/Sep-2020/*
+   /blog/Sep-2020/index
 
 

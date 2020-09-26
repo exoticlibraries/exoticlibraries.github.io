@@ -1,4 +1,6 @@
 
+# Home
+
 <div class="header">
     <img src="https://avatars1.githubusercontent.com/u/57629577" alt="libcester logo"><br/><br/>
     <span class="title">Exotic Libraries</span><br/>
@@ -6,12 +8,12 @@
         A collection of cross-platform C and C++ libraries with guaranteed functionalities across various operating systems.
     </p>
     <div class="linksdiv">
-        <a class="link" href="#">Support</a>
+        <a class="link" href="./pages/support.html">Support</a>
         <a class="link" href="./pages/contribute.html">Contribute</a>
         <a class="link" href="./pages/style_guide.html">Style Guide</a>
     </div>
 </div>
-<div style="margin-top:470px;"></div>
+<div style="margin-top:420px;"></div>
 
 <div class="two-sided">
     <div class="left-side">
@@ -28,7 +30,7 @@
     </div>
 </div>
 
-# <span style="display:table;margin:0 auto;margin-top:100px;">Featured Projects</span>
+# <span style="display:table;margin:0 auto;margin-top:100px;">Featured Libraries</span>
 
 <div class="all-projects" style="justify-content: center;">
 <div class="project main-project">
@@ -64,7 +66,7 @@
 </div>
 
 <div class="project main-project">
-    <img class="logo" style="max-width: 100px;max-height: 100px;" src="https://avatars1.githubusercontent.com/u/57629577" alt="libmetaref logo">
+    <img class="logo" style="max-width: 100px;max-height: 100px;" src="https://raw.githubusercontent.com/exoticlibraries/libmetaref/main/docs/libmetaref.png" alt="libmetaref logo">
     <br/><span class="title">libmetaref</span>
     <hr class="project-rule"/>
     <p class="description">
@@ -80,5 +82,5 @@
 </div>
 </div>
 
-<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/projects.html"> View All Projects </a>
+<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/projects.html"> View All Libraries </a>
 <script>treatLandingVariables();</script>

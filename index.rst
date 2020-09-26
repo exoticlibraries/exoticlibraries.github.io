@@ -10,6 +10,8 @@
    /pages/why
    /pages/projects
    /pages/style_guide
+   /pages/support
+   /pages/contribute
 
 
 .. mdinclude:: README.md
