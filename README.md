@@ -82,5 +82,13 @@
 </div>
 </div>
 
-<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/projects.html"> View All Libraries </a>
+<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/libraries.html"> View All Libraries </a>
+
+# <span style="display:table;margin:0 auto;margin-top:100px;">Featured Applications</span>
+
+<div class="all-projects" style="justify-content: center;">
+
+</div>
+
+<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/libraries.html"> View All Libraries </a>
 <script>treatLandingVariables();</script>

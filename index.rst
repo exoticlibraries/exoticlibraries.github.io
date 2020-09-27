@@ -7,8 +7,8 @@
    :caption: Main
    :name: main-nav
 
-   /pages/why
-   /pages/projects
+   /pages/libraries
+   /pages/programs
    /pages/style_guide
    /pages/support
    /pages/contribute

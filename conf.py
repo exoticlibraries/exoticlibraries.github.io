@@ -21,7 +21,8 @@ source_suffix = ['.rst', '.md']
 
 html_theme_options = {
     'navbar_links': [
-        ('Projects', 'pages/projects'),
+        ('Libraries', 'pages/libraries'),
+        ('Programs', 'pages/programs'),
         ('Blog', 'blog/index'),
         ('Style Guide', 'pages/style_guide'),
         ('Github', 'https://github.com/exoticlibraries/'),
@@ -36,7 +37,8 @@ html_theme_options = {
         ('fab fa-github', 'https://github.com/exoticlibraries/')
     ],
     'no_sidebar': [
-        'pages/projects'
+        'pages/libraries',
+        'pages/programs'
     ],
     "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/edit/gh-pages/",
     "document_font_size": "15px",
