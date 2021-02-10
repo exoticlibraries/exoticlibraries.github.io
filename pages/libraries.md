@@ -3,17 +3,17 @@
 
 <div class="all-projects">
 <div class="project main-project">
-    <img class="logo" src="https://avatars1.githubusercontent.com/u/57629577" alt="libxtypes logo">
-    <br/><span class="title">libxtypes</span>
+    <img class="logo" src="https://avatars1.githubusercontent.com/u/57629577" alt="libxtd logo">
+    <br/><span class="title">libxtd</span>
     <hr class="project-rule"/>
     <p class="description">
-        An untyply typed library of data types and structures for C. Array, LinkedList, Stack, Heap, Set, String, Tree, e.tc.
+        Collection of generic data structures and algorithms for C.
     </p>
     <div class="bottomer">
         <span class="tech-used">ANSI C</span><br>
         <div class="links">
-            <a target="_blank" href="https://github.com/exoticlibraries/libxtypes">Github <i class="fas fa-external-link-alt"></i></a> 
-            <a target="_blank" href="https://exoticlibraries.github.io/libxtypes">Website <i class="fas fa-external-link-alt"></i></a> 
+            <a target="_blank" href="https://github.com/exoticlibraries/libxtd">Github <i class="fas fa-external-link-alt"></i></a> 
+            <a target="_blank" href="https://exoticlibraries.github.io/libxtd">Website <i class="fas fa-external-link-alt"></i></a> 
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     <br/><span class="title">libcester</span>
     <hr class="project-rule"/>
     <p class="description">
-        A robust header only unit testing framework for C programming language. Support function mocking, memory leak detection, crash report.
+        A robust header only unit testing framework for C and C++ programming language. Support function mocking, memory leak detection, crash report.
     </p>
     <div class="bottomer">
         <span class="tech-used">ANSI C</span><br>

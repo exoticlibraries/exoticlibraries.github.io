@@ -1,7 +1,7 @@
 import themata
 
 project = 'Exotic Libraries'
-copyright = '2020, Exotic Libraries - MIT License'
+copyright = '2021, Exotic Libraries - MIT License'
 author = 'Exotic Libraries Contributors'
 
 html_theme_path = [themata.get_html_theme_path()]
@@ -40,7 +40,7 @@ html_theme_options = {
         'pages/libraries',
         'pages/programs'
     ],
-    "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/edit/gh-pages/",
+    "source_root": "https://github.com/exoticlibraries/exoticlibraries.github.io/edit/main/",
     "document_font_size": "15px",
     'header_background_color': '#0f6091',
     'menu_item_color': 'white',
