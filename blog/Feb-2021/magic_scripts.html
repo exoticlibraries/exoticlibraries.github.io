@@ -1,0 +1,328 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation scripts for C and C++ libraries on github &#8212; Exotic Libraries  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/water.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/exoticlibraries.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/exoticlibraries.js"></script>
+    <link rel="shortcut icon" href="../../_static/exoticlibs.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  
+  
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
+    
+    <meta name="description" content="A collection of cross-platform C and C++ libraries with guaranteed functionalities across various">
+    <meta name="keywords" content="thecarisma, c, cpp, c++, framework, exoticlibraries, exotic, libraries, networking">
+    <meta name="author" content="Adewale Azeez">
+    <meta property="og:url" content="https://exoticlibraries.github.io/blog/Feb-2021/magic_scripts.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Exotic Libraries" />
+    <meta property="og:description" content="A collection of cross-platform C and C++ libraries with guaranteed functionalities across various" />
+    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/57629577" />
+    
+  
+  
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@exoticlibs" />
+    <meta name="twitter:creator" content="@iamthecarisma" />
+    <meta name="twitter:title" content="Exotic Libraries" />
+    <meta name="twitter:description" content="A collection of cross-platform C and C++ libraries with guaranteed functionalities across various" />
+    <meta name="twitter:image" content="https://avatars1.githubusercontent.com/u/57629577" />
+    
+  
+
+  </head><body>
+
+    <div class="document">
+    <header>
+        <div class="topnavbar">
+            
+                <img class="icon" src="../../_static/exoticlibs.png"></img>
+            
+            <a href="../../index.html" class="title">Exotic Libraries</a>
+            
+                
+                    <a href="../../pages/libraries.html">Libraries</a>
+                
+            
+                
+                    <a href="../../pages/programs.html">Programs</a>
+                
+            
+                
+                    <a href="../index.html">Blog</a>
+                
+            
+                
+                    <a href="../../pages/style_guide.html">Style Guide</a>
+                
+            
+                
+                    <a href="https://github.com/exoticlibraries/">Github</a> 
+                
+            
+                
+                    <a href="../../pages/support.html">Support</a>
+                
+            
+        </div>
+    </header>
+    
+    <div class="documentwrapper">
+        
+            
+                
+                
+                <div class="sidebar-left">
+                    <div class="search-container">
+                        <form class="search" action="../../search.html" method="get">
+                            <input type="text" placeholder="Search..." name="q">
+                        </form>
+                    </div>
+                    </br>
+                    <p class="caption"><span class="caption-text">Main</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/programs.html">Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/style_guide.html">Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/contribute.html">Contribute</a></li>
+</ul>
+
+                </div>
+                
+            
+        
+        <div class="bodywrapper" style="">
+                
+  <div class="section" id="installation-scripts-for-c-and-c-libraries-on-github">
+<h1>Installation scripts for C and C++ libraries on github<a class="headerlink" href="#installation-scripts-for-c-and-c-libraries-on-github" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="#managing-dependencies-for-c-and-c-projects">Managing dependencies for C and C++ projects</a></li>
+<li><a class="reference internal" href="#mac-unix-linux-script">Mac, Unix, Linux Script</a><ul>
+<li><a class="reference internal" href="#bash-script-options-and-usage">Bash Script Options and Usage</a></li>
+<li><a class="reference internal" href="#bash-script-examples">Bash Script Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#windows-script">Windows Script</a><ul>
+<li><a class="reference internal" href="#powershell-script-options-and-usage">Powershell Script Options and Usage</a></li>
+<li><a class="reference internal" href="#powershell-script-examples">Powershell Script Examples</a></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="managing-dependencies-for-c-and-c-projects">
+<h2>Managing dependencies for C and C++ projects<a class="headerlink" href="#managing-dependencies-for-c-and-c-projects" title="Permalink to this headline">¶</a></h2>
+<p>Managing dependency in C and C++ projects is usually tricky as there is no one standard registry where a library can be downloaded from.
+This might not be true for a Linux system where there is apt-get that installs libraries and programs from PPA but most of the libraries
+are outdated and it a lot of stress to add a library to PPA. Another approach is using Conan which requires the addition of the CMake
+build system into your project.</p>
+<p>A better approach is to use a github as a package registry for C projects and install from each project repo since most
+libraries are distributed as source anyways, the closest project to achieving a smooth package registry with less hassle is
+<a class="reference external" href="https://github.com/Microsoft/vcpkg">vcpkg</a> by Microsoft but this also requires the library to be added to the vcpkg port
+and have vcpkg installed on the system.</p>
+<p>All the above ways of managing packages are all good but I love the way <a class="reference external" href="https://golang.org/">golang</a> manages packages and is able to simply pull a package
+from the github repo and is immediately available for use in your go project, that the idea behind the two scripts I wrote and I went
+further such that no prerequisite is required to download a C, C++ library from github just the internet and the native shell for
+the operating systems, bash for Unix, Mac and Linux and Powershell for windows.</p>
+<p>The purpose of the script is to be able to download, build (when needed), and install the library without any hassle at all using remote scripts.
+Currently, the script can only install headers only libraries from github but I had planned for it to be able to build non header-only library
+if a CMakeLists.txt or Makefile is present in the repo root.</p>
+<p>The source for the bash and Powershell scripts:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/exoticlibraries/exoticlibraries.github.io/blob/main/magic/install.sh">Bash Script</a></li>
+<li><a class="reference external" href="https://github.com/exoticlibraries/exoticlibraries.github.io/blob/main/magic/install.ps1">Powershell Script</a></li>
+</ul>
+</div>
+<div class="section" id="mac-unix-linux-script">
+<h2>Mac, Unix, Linux Script<a class="headerlink" href="#mac-unix-linux-script" title="Permalink to this headline">¶</a></h2>
+<p>The bash script hosted at <a class="reference external" href="https://exoticlibraries.github.io/magic/install.sh">https://exoticlibraries.github.io/magic/install.sh</a> can be used remotely or locally
+to install exotic libraries and any headers only library hosted on github into the <code class="docutils literal notranslate"><span class="pre">/usr/local/include</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/usr/include/</span></code> or any specified folder. The script accepts various argument to select what branch of the
+repo to install, where to install the library, the temporary folder for download and extraction of the
+repo archive e.t.c.</p>
+<p>To use the script locally the bash script should be downloaded into a folder, it can also be invoked remotely
+using input character + curl.</p>
+<p>To use locally replace <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">&lt;(curl</span> <span class="pre">-s</span> <span class="pre">https://exoticlibraries.github.io/magic/install.sh)</span></code> in the examples
+below with <code class="docutils literal notranslate"><span class="pre">./install.sh</span></code>.</p>
+<div class="section" id="bash-script-options-and-usage">
+<h3>Bash Script Options and Usage<a class="headerlink" href="#bash-script-options-and-usage" title="Permalink to this headline">¶</a></h3>
+<p>The script accepts various options, to view the help message use the <code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code> option.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash &lt;<span class="o">(</span>curl -s https://exoticlibraries.github.io/magic/install.sh<span class="o">)</span> -h
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>-h, –help</strong>: Displays the script help message and exit.</li>
+<li><strong>-all</strong>: Install all the exotic libraries.</li>
+<li><strong>–dontoverride</strong>: If one of the libraries to installed already exist it does not override it, it overrides
+existing by default. This still downloads the archive though, so it advisable not to specify a library if it
+not to be installed and overridden.</li>
+<li><strong>–dontclean</strong>: Do not delete the libraries downloaded and extracted archive from the temporary folder.</li>
+<li><strong>–installfolder=</strong>: Specify where to install the library. The default location is <code class="docutils literal notranslate"><span class="pre">/usr/local/include/</span></code> and if
+the script is executed with superuser (sudo/su) privilege, the default is <code class="docutils literal notranslate"><span class="pre">/usr/include/</span></code>. For example to change
+the installation folder to the current directory add the option <code class="docutils literal notranslate"><span class="pre">--installfolder=./</span></code></li>
+<li><strong>–tmpfolder=</strong>: Change where the libraries archive are downloaded and extracted into, the default location is <code class="docutils literal notranslate"><span class="pre">/tmp/</span></code></li>
+</ul>
+</div>
+<div class="section" id="bash-script-examples">
+<h3>Bash Script Examples<a class="headerlink" href="#bash-script-examples" title="Permalink to this headline">¶</a></h3>
+<p>The default github repo branch is <strong>main</strong>, to select which branch to install from add <code class="docutils literal notranslate"><span class="pre">&#64;branch-name</span></code> after the library name
+e.g. <em>libcester&#64;dev</em>, <em>metaref&#64;main</em>, <em>MrFrenik/gunslinger&#64;master</em>, <em>https://github.com/nothings/stb&#64;master</em> e.t.c.</p>
+<p>To install all the exotic libraries:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash &lt;<span class="o">(</span>curl -s https://exoticlibraries.github.io/magic/install.sh<span class="o">)</span> -all
+</pre></div>
+</div>
+<p>To install selected exotic libraries, e.g. libxtd, libcester, libmetaref</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash &lt;<span class="o">(</span>curl -s https://exoticlibraries.github.io/magic/install.sh<span class="o">)</span> libxtd libcester libmetaref
+</pre></div>
+</div>
+<p>To install non exotic library from a github repo, specify just the repo-owner/repo-name or the absolute github
+link to the repo. E.g. to install <a class="reference external" href="https://github.com/MrFrenik/gunslinger">gunslinger</a> and <a class="reference external" href="https://github.com/nothings/stb">stb</a>
+from master branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash &lt;<span class="o">(</span>curl -s https://exoticlibraries.github.io/magic/install.sh<span class="o">)</span> MrFrenik/gunslinger@master https://github.com/nothings/stb@master
+</pre></div>
+</div>
+<p>To install <a class="reference external" href="https://exoticlibraries.github.io/libcester">libcester</a> and <a class="reference external" href="https://github.com/MrFrenik/gunslinger">gunslinger</a>
+into the currenct folder with a custom temporary directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash &lt;<span class="o">(</span>curl -s https://exoticlibraries.github.io/magic/install.sh<span class="o">)</span> --installfolder<span class="o">=</span>./ --tmpfolder<span class="o">=</span>../temp/ libcester@main MrFrenik/gunslinger@master
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="windows-script">
+<h2>Windows Script<a class="headerlink" href="#windows-script" title="Permalink to this headline">¶</a></h2>
+<p>The Powershell script hosted at <a class="reference external" href="https://exoticlibraries.github.io/magic/install.ps1">https://exoticlibraries.github.io/magic/install.ps1</a> can be used remotely or locally
+to install exotic libraries and any header-only library hosted on github into the detected compilers include paths or any specified folder.
+The following compilers are auto detected and the libraries are installed into their corresponding include paths:</p>
+<ul class="simple">
+<li>Clang</li>
+<li>GCC</li>
+<li>MSVC</li>
+</ul>
+<p>It is required that the gcc is present in PATH.</p>
+<p>The script accept various argument to select what branch of the repo to install, where to install the library, the temporary
+folder for download and extraction of the repo archive e.t.c.</p>
+<p>To use locally replace <code class="docutils literal notranslate"><span class="pre">Set-ExecutionPolicy</span> <span class="pre">Bypass</span> <span class="pre">-Scope</span> <span class="pre">Process</span> <span class="pre">-Force;</span> <span class="pre">iex</span> <span class="pre">((New-Object</span> <span class="pre">System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1'))</span></code> in the examples below with <code class="docutils literal notranslate"><span class="pre">./install.ps1</span></code>.</p>
+<div class="section" id="powershell-script-options-and-usage">
+<h3>Powershell Script Options and Usage<a class="headerlink" href="#powershell-script-options-and-usage" title="Permalink to this headline">¶</a></h3>
+<p>The script accepts various options, to view the help message use the <code class="docutils literal notranslate"><span class="pre">-H</span></code> or <code class="docutils literal notranslate"><span class="pre">--Help</span></code> option.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="n">-H</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>-H, –Help</strong>: Displays the script help message and exit.</li>
+<li><strong>-All</strong>: Install all the exotic libraries.</li>
+<li><strong>–DontOverride</strong>: If one of the libraries to installed already exist it does not override it, it overrides
+existing by default. This still downloads the archive though, so it advisable not to specify a library if it
+not to be installed and overridden.</li>
+<li><strong>–DontClean</strong>: Do not delete the libraries downloaded and extracted archive from the temporary folder.</li>
+<li><strong>–InstallFolder=</strong>: Specify where to install the library. The default location is the include path for detected
+compilers. For example to change the installation folder to the current directory add the option <code class="docutils literal notranslate"><span class="pre">--installfolder=./</span></code></li>
+<li><strong>–TmpFolder=</strong>: Change where the libraries archive are downloaded and extracted into, the default location is <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\AppData\Local\Temp</span></code></li>
+</ul>
+</div>
+<div class="section" id="powershell-script-examples">
+<h3>Powershell Script Examples<a class="headerlink" href="#powershell-script-examples" title="Permalink to this headline">¶</a></h3>
+<p>The default github repo branch is <strong>main</strong>, to select which branch to install from add <code class="docutils literal notranslate"><span class="pre">&#64;branch-name</span></code> after the library name
+e.g. <em>libcester&#64;dev</em>, <em>metaref&#64;main</em>, <em>MrFrenik/gunslinger&#64;master</em>, <em>https://github.com/nothings/stb&#64;master</em> e.t.c.</p>
+<p>To install all the exotic libraries:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="n">-All</span>
+</pre></div>
+</div>
+<p>To install selected exotic libraries, e.g. libxtd, libcester, libmetaref</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="n">libxtd</span> <span class="n">libcester</span> <span class="n">libmetaref</span>
+</pre></div>
+</div>
+<p>To install non exotic library from a github repo, specify just the repo-owner/repo-name or the absolute github
+link to the repo. E.g. to install <a class="reference external" href="https://github.com/MrFrenik/gunslinger">gunslinger</a> and <a class="reference external" href="https://github.com/nothings/stb">stb</a>
+from master branch</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;)) MrFrenik/gunslinger@master https://github.com/nothings/stb@master
+</pre></div>
+</div>
+<p>To install <a class="reference external" href="https://exoticlibraries.github.io/libcester">libcester</a> and <a class="reference external" href="https://github.com/MrFrenik/gunslinger">gunslinger</a>
+into the currenct folder with a custom temporary directory</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="p">-</span><span class="n">-InstallFolder</span><span class="p">=./</span> <span class="p">-</span><span class="n">-TmpFolder</span><span class="p">=../</span><span class="n">temp</span><span class="p">/</span> <span class="n">libcester</span><span class="nv">@main</span> <span class="n">MrFrenik</span><span class="p">/</span><span class="n">gunslinger</span><span class="nv">@master</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li>Author: Adewale Azeez</li>
+<li>Date: 08 February, 2021</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+                
+                </br>
+                 
+                    
+                        <div class="navigation">
+                            
+                                <a class="reference navigator" style="float:left;" href="https://github.com/exoticlibraries/exoticlibraries.github.io/edit/main//blog/Feb-2021/magic_scripts.md"><i class="fa fa-pen"></i>Edit this page</a>    
+                            
+                            <a class="reference navigator" style="float:left;" href="../../genindex.html"><i class="fa fa-book"></i>Index</a>
+                            
+                            
+                            
+                        </div>
+                    
+                
+        </div>
+        <div style="clear:both"></div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" role="contentinfo">
+        <div class="social">
+            
+                <a href="https://twitter.com/exoticlibs"><i class="fab fa-twitter"></i></a>
+            
+                <a href="https://github.com/exoticlibraries/"><i class="fab fa-github"></i></a>
+            
+        </div>
+        <div class="footer-col1">
+            
+        </div>
+        
+        
+        <div class="doc-sphinx-info">
+                    &copy; Copyright 2021, Exotic Libraries - MIT License.
+                Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5
+                with <a href="https://thecarisma.github.io/themata/water/index.html">water</a> theme.
+        </div>
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("caption");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+
+  </body>
+</html>
