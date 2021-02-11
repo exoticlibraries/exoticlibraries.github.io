@@ -59,6 +59,7 @@ Function Main {
         Match-And-Extract-Argument $_
         If ($Global:ARG_MATCH -eq "-H" -or $Global:ARG_MATCH -eq "--Help") {
             Print-Help
+            Return 0
 
         } ElseIf ($Global:ARG_MATCH -eq "--DontClean") {
             $Global:CLEANUP=$false
@@ -118,11 +119,13 @@ Function Print-Help {
     Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libcester libmetaref libxtd@dev"
     Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --DontClean MrFrenik/gunslinger@master"
     Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --InstallFolder=./ https://github.com/nothings/stb@master"
-    Exit 0 
 }
 
 Function Validate-Paths {
     If ($Global:INSTALLATION_PATHS.Count -eq 0) {
+        If ($Global:IS_ADMIN -eq $False) {
+            Fail-With-Message "You need to run the shell as Admin if you want to install in detected installed compiler include paths"
+        }
         Detect-Installed-Compilers-Include-Paths
         $Global:INSTALLATION_PATHS | ForEach-Object {
             Write-Output " => $_"
@@ -309,9 +312,8 @@ Function Add-Exotic-Libraries {
 }
 
 Function Fail-With-Message {
-    Write-Error "$args"
     [Environment]::CurrentDirectory = $OLD_CURRENT_DIRECTORY
-    Exit 1
+    throw "$args"
 }
 
 Main $args
