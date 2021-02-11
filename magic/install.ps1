@@ -116,10 +116,9 @@ Function Print-Help {
     Write-Output "./install.ps1 --InstallFolder=./ --TmpFolder=./tmp/ https://github.com/nothings/stb@master"
     Write-Output ""
     Write-Output "Examples from url"
-    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libcester libmetaref libxtd@dev"
-    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --DontClean MrFrenik/gunslinger@master"
-    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --InstallFolder=./ https://github.com/nothings/stb@master"
-    Return 0
+    Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) libcester libmetaref libxtd@dev"
+    Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) --DontClean MrFrenik/gunslinger@master"
+    Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) --InstallFolder=./ https://github.com/nothings/stb@master"
 }
 
 Function Validate-Paths {
