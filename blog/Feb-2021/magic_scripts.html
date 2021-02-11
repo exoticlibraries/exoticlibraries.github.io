@@ -167,8 +167,7 @@ below with <code class="docutils literal notranslate"><span class="pre">./instal
 </div>
 <ul class="simple">
 <li><strong>-h, –help</strong>: Displays the script help message and exit.</li>
-<li><strong>-all</strong>: Install all the exotic libraries.</li>
-<li><strong>–dontoverride</strong>: If one of the libraries to installed already exist it does not override it, it overrides
+<li><strong>-all</strong>: Install all the exotic libraries.
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it
 not to be installed and overridden.</li>
 <li><strong>–dontclean</strong>: Do not delete the libraries downloaded and extracted archive from the temporary folder.</li>
@@ -225,8 +224,7 @@ folder for download and extraction of the repo archive e.t.c.</p>
 </div>
 <ul class="simple">
 <li><strong>-H, –Help</strong>: Displays the script help message and exit.</li>
-<li><strong>-All</strong>: Install all the exotic libraries.</li>
-<li><strong>–DontOverride</strong>: If one of the libraries to installed already exist it does not override it, it overrides
+<li><strong>–All</strong>: Install all the exotic libraries.
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it
 not to be installed and overridden.</li>
 <li><strong>–DontClean</strong>: Do not delete the libraries downloaded and extracted archive from the temporary folder.</li>
@@ -240,7 +238,7 @@ compilers. For example to change the installation folder to the current director
 <p>The default github repo branch is <strong>main</strong>, to select which branch to install from add <code class="docutils literal notranslate"><span class="pre">&#64;branch-name</span></code> after the library name
 e.g. <em>libcester&#64;dev</em>, <em>metaref&#64;main</em>, <em>MrFrenik/gunslinger&#64;master</em>, <em>https://github.com/nothings/stb&#64;master</em> e.t.c.</p>
 <p>To install all the exotic libraries:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="n">-All</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://exoticlibraries.github.io/magic/install.ps1&#39;</span><span class="p">))</span> <span class="p">-</span><span class="n">-All</span>
 </pre></div>
 </div>
 <p>To install selected exotic libraries, e.g. libxtd, libcester, libmetaref</p>

@@ -58,7 +58,6 @@ bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) -h
 
 - **-h, --help**: Displays the script help message and exit.
 - **-all**: Install all the exotic libraries.
-- **--dontoverride**: If one of the libraries to installed already exist it does not override it, it overrides 
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it 
 not to be installed and overridden.
 - **--dontclean**: Do not delete the libraries downloaded and extracted archive from the temporary folder.
@@ -125,8 +124,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 ```
 
 - **-H, --Help**: Displays the script help message and exit.
-- **-All**: Install all the exotic libraries.
-- **--DontOverride**: If one of the libraries to installed already exist it does not override it, it overrides 
+- **--All**: Install all the exotic libraries.
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it 
 not to be installed and overridden.
 - **--DontClean**: Do not delete the libraries downloaded and extracted archive from the temporary folder.
@@ -142,7 +140,7 @@ e.g. *libcester@dev*, *metaref@main*, *MrFrenik/gunslinger@master*, *https://git
 To install all the exotic libraries:
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) -All
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --All
 ```
 
 To install selected exotic libraries, e.g. libxtd, libcester, libmetaref
