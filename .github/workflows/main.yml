@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build
+      - name: Install and Build 🔧
         run: |
           sudo apt-get install -y python3 python3-setuptools python3-pip python3-sphinx
           python3 -m pip install --upgrade pip
@@ -24,8 +24,8 @@ jobs:
           cp magic/* build/html/magic
           cp .nojekyll build/html/
           
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_FOR_CI_CD }}
           BRANCH: gh-pages
