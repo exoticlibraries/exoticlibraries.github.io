@@ -45,10 +45,12 @@ EXOTIC_LIBRARIES=(
 IS_ROOT=true
 ARG_MATCH=false
 EXTRACTED_ARG_VALUE=
-OVERRIDE_EXISTING=true
 INSTALLATION_PATH=/usr/local/include
 TMP_FOLDER=/tmp/
 CLEANUP=true
+
+echo "Exotic Libraries Magic Install Script $VERSION"
+echo "The $LICENSE License Copyright (c) $YEAR $AUTHOR"
 
 main() {
     check_if_is_root
@@ -60,9 +62,6 @@ main() {
         match_and_extract_argument $ARG
         if [[ "-h" == "$ARG_MATCH" || "--help" == "$ARG_MATCH" ]]; then
             print_help
-
-        elif [[ "--dontoverride" == "$ARG_MATCH" ]]; then
-            OVERRIDE_EXISTING=false
 
         elif [[ "--dontclean" == "$ARG_MATCH" ]]; then
             CLEANUP=false
@@ -95,8 +94,6 @@ match_and_extract_argument() {
 }
 
 print_help() {
-    echo "Exotic Libraries Magic Install Script $VERSION"
-    echo "The $LICENSE License Copyright (c) $YEAR $AUTHOR"
     echo "Usage: ./install.sh [OPTIONS] [LIBRARIES...]"
     echo ""
     echo "[LIBRARIES..]: The headers only libraries to install e.g. libcester@dev nothings/stb@master"
@@ -104,19 +101,18 @@ print_help() {
     echo ""
     echo "The OPTIONS include:"
     echo "-h --help          Display this help message and exit"
-    echo "--dontoverride     Do not override a library if it already exists"
     echo "--dontclean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
     echo "--installfolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
-    echo "--tmpfolder[FOLDER]      Specify the folder to download archive and tmp files, default is /tmp/"
+    echo "--tmpfolder=[FOLDER]      Specify the folder to download archive and tmp files, default is /tmp/"
     echo ""
     echo "Examples with download script"
     echo "./install.sh libcester libmetaref libxtd@dev"
-    echo "./install.sh --dontoverride MrFrenik/gunslinger@master"
+    echo "./install.sh --dontclean MrFrenik/gunslinger@master"
     echo "./install.sh --installfolder=./ --tmpfolder=./tmp/ https://github.com/nothings/stb@master"
     echo ""
     echo "Examples from url"
     echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) libcester libmetaref libxtd@dev"
-    echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --dontoverride MrFrenik/gunslinger@master"
+    echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --dontclean MrFrenik/gunslinger@master"
     echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --installfolder=./ https://github.com/nothings/stb@master"
     exit 0
 }
