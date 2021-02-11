@@ -11,23 +11,23 @@
 # 
 # Sample Usage:
 # To view help
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) -H
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --Help
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) -H
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --Help
 #
 # To install libxtd
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libxtd
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libxtd
 # 
 # To install libcester
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libcester
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libcester
 # 
 # To install libxtd and libcester
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libxtd libcester
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libxtd libcester
 # 
 # To install gunslinger from github from master branch
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) MrFrenik/gunslinger@master
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) MrFrenik/gunslinger@master
 # 
 # To install stb from github from master branch
-#     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) https://github.com/nothings/stb@master
+#     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) https://github.com/nothings/stb@master
 # 
 # License: MIT
 # Author: Adewale Azeez <azeezadewale98@gmail.com>
@@ -59,7 +59,7 @@ Function Main {
         Match-And-Extract-Argument $_
         If ($Global:ARG_MATCH -eq "-H" -or $Global:ARG_MATCH -eq "--Help") {
             Print-Help
-            Return 0
+            Break
 
         } ElseIf ($Global:ARG_MATCH -eq "--DontClean") {
             $Global:CLEANUP=$false
@@ -116,9 +116,10 @@ Function Print-Help {
     Write-Output "./install.ps1 --InstallFolder=./ --TmpFolder=./tmp/ https://github.com/nothings/stb@master"
     Write-Output ""
     Write-Output "Examples from url"
-    Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libcester libmetaref libxtd@dev"
-    Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --DontClean MrFrenik/gunslinger@master"
-    Write-Output "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --InstallFolder=./ https://github.com/nothings/stb@master"
+    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libcester libmetaref libxtd@dev"
+    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --DontClean MrFrenik/gunslinger@master"
+    Write-Output "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --InstallFolder=./ https://github.com/nothings/stb@master"
+    Return 0
 }
 
 Function Validate-Paths {
