@@ -113,14 +113,14 @@ It is required that the gcc is present in PATH.
 The script accept various argument to select what branch of the repo to install, where to install the library, the temporary 
 folder for download and extraction of the repo archive e.t.c.
 
-To use locally replace `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1'))` in the examples below with `./install.ps1`.
+To use locally replace `& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1")))` in the examples below with `./install.ps1`.
 
 ### Powershell Script Options and Usage
 
 The script accepts various options, to view the help message use the `-H` or `--Help` option. 
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) -H
+& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) -H
 ```
 
 - **-H, --Help**: Displays the script help message and exit.
@@ -140,13 +140,13 @@ e.g. *libcester@dev*, *metaref@main*, *MrFrenik/gunslinger@master*, *https://git
 To install all the exotic libraries:
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --All
+& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --All
 ```
 
 To install selected exotic libraries, e.g. libxtd, libcester, libmetaref
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) libxtd libcester libmetaref
+& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) libxtd libcester libmetaref
 ```
 
 To install non exotic library from a github repo, specify just the repo-owner/repo-name or the absolute github 
@@ -154,14 +154,14 @@ link to the repo. E.g. to install [gunslinger](https://github.com/MrFrenik/gunsl
 from master branch
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) MrFrenik/gunslinger@master https://github.com/nothings/stb@master
+& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) MrFrenik/gunslinger@master https://github.com/nothings/stb@master
 ```
 
 To install [libcester](https://exoticlibraries.github.io/libcester) and [gunslinger](https://github.com/MrFrenik/gunslinger) 
 into the currenct folder with a custom temporary directory
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://exoticlibraries.github.io/magic/install.ps1')) --InstallFolder=./ --TmpFolder=../temp/ libcester@main MrFrenik/gunslinger@master
+& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) --InstallFolder=./ --TmpFolder=../temp/ libcester@main MrFrenik/gunslinger@master
 ```
 
 ----
