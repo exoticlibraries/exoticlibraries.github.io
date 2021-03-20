@@ -56,15 +56,15 @@ The script accepts various options, to view the help message use the `-h` or `--
 bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) -h
 ```
 
-- **-h, --help**: Displays the script help message and exit.
-- **-all**: Install all the exotic libraries.
+- `-h, --help`: Displays the script help message and exit.
+- `-all`: Install all the exotic libraries.
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it 
 not to be installed and overridden.
-- **--dontclean**: Do not delete the libraries downloaded and extracted archive from the temporary folder.
-- **--installfolder=**: Specify where to install the library. The default location is `/usr/local/include/` and if 
+- `--dontclean`: Do not delete the libraries downloaded and extracted archive from the temporary folder.
+- `--installfolder=`: Specify where to install the library. The default location is `/usr/local/include/` and if 
 the script is executed with superuser (sudo/su) privilege, the default is `/usr/include/`. For example to change 
 the installation folder to the current directory add the option `--installfolder=./`
-- **--tmpfolder=**: Change where the libraries archive are downloaded and extracted into, the default location is `/tmp/`
+- `--tmpfolder=`: Change where the libraries archive are downloaded and extracted into, the default location is `/tmp/`
 
 ### Bash Script Examples
 
@@ -123,14 +123,14 @@ The script accepts various options, to view the help message use the `-H` or `--
 & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) -H
 ```
 
-- **-H, --Help**: Displays the script help message and exit.
-- **--All**: Install all the exotic libraries.
+- `-H, --Help`: Displays the script help message and exit.
+- `--All`: Install all the exotic libraries.
 existing by default. This still downloads the archive though, so it advisable not to specify a library if it 
 not to be installed and overridden.
-- **--DontClean**: Do not delete the libraries downloaded and extracted archive from the temporary folder.
-- **--InstallFolder=**: Specify where to install the library. The default location is the include path for detected 
+- `--DontClean`: Do not delete the libraries downloaded and extracted archive from the temporary folder.
+- `--InstallFolder=`: Specify where to install the library. The default location is the include path for detected 
 compilers. For example to change the installation folder to the current directory add the option `--installfolder=./`
-- **--TmpFolder=**: Change where the libraries archive are downloaded and extracted into, the default location is `C:\Users\<username>\AppData\Local\Temp`
+- `--TmpFolder=`: Change where the libraries archive are downloaded and extracted into, the default location is `C:\Users\<username>\AppData\Local\Temp`
 
 ### Powershell Script Examples
 
