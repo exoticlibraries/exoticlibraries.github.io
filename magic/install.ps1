@@ -206,6 +206,10 @@ Function Detect-Installed-Compilers-Include-Paths {
     Find-Include-Folder-With-Path "C:\Program Files (x86)\Microsoft Visual Studio\"
     Find-Include-Folder-With-Path "C:\Program Files\LLVM\"
     Find-Include-Folder-With-Path "C:\Program Files (x86)\LLVM\"
+    Find-Include-Folder-With-Path "C:\TDM-GCC\"
+    Find-Include-Folder-With-Path "C:\TDM-GCC-64\"
+    Find-Include-Folder-With-Path "C:\MingW\"
+    Find-Include-Folder-With-Path "C:\MingW64\"
 }
 
 Function Install-Libraries {
