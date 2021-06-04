@@ -36,6 +36,7 @@ $Global:VERSION="v2.0"
 $Global:LICENSE="MIT"
 $Global:YEAR="2021"
 $Global:AUTHOR="Adewale Azeez"
+$Global:BASE_BRANCH="main"
 $Global:SELECTED_LIBRARIES = New-Object System.Collections.Generic.List[string]
 $Global:EXOTIC_LIBRARIES = New-Object System.Collections.Generic.List[string]
 $Global:IS_ADMIN=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
@@ -69,6 +70,9 @@ Function Main {
             
         } ElseIf ($Global:ARG_MATCH -eq "--TmpFolder") {
             $Global:TMP_FOLDER = [System.IO.Path]::GetFullPath($Global:EXTRACTED_ARG_VALUE)
+            
+        } ElseIf ($Global:ARG_MATCH -eq "--BaseBranch") {
+            $Global:BASE_BRANCH = $Global:EXTRACTED_ARG_VALUE
             
         } ElseIf ($Global:ARG_MATCH -eq "--All") {
             $Global:EXOTIC_LIBRARIES | ForEach-Object {
@@ -109,6 +113,7 @@ Function Print-Help {
     Write-Output "--DontClean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
     Write-Output "--InstallFolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
     Write-Output "--TmpFolder=[FOLDER]     Specify the folder to download archive and tmp files, default is /tmp/"
+    Write-Output "--BaseBranch=[BRANCH]    Specify the base branch to download from, default is 'main'"
     Write-Output ""
     Write-Output "Examples with download script"
     Write-Output "./install.ps1 libcester libmetaref libxtd@dev"
@@ -222,7 +227,7 @@ Function Install-Libraries {
         }
         $BRANCH=$Splited[1]
         If (-not $BRANCH -or $BRANCH -eq "") {
-            $BRANCH="main"
+            $BRANCH=$Global:BASE_BRANCH
         }
         $LIBRARY_ZIP_URL = Poof-Out-Github-Link-For-Library $NameOnly $BRANCH
         $LIBRARY_NAME = $LIBRARY_ZIP_URL.SubString(0, $LIBRARY_ZIP_URL.IndexOf("/archive"))
@@ -237,7 +242,7 @@ Function Install-Libraries {
         }
         $BRANCH=$Splited[1]
         If (-not $BRANCH -or $BRANCH -eq "") {
-            $BRANCH="main"
+            $BRANCH=$Global:BASE_BRANCH
         }
         $LIBRARY_NAME = $NameOnly.SubString($NameOnly.LastIndexOf("/")+1)
         Detect-Header-Files-And-Install $LIBRARY_NAME $BRANCH
