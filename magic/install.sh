@@ -58,7 +58,12 @@ echo "The $LICENSE License Copyright (c) $YEAR $AUTHOR"
 main() {
     check_if_is_root
     if [ "$IS_ROOT" == "true" ]; then
-        INSTALLATION_PATH=/usr/include
+        if [[ -d "/usr/include" ]];  then
+            INSTALLATION_PATH=/usr/include
+        fi
+        if [[ ! -d "$INSTALLATION_PATH" ]];  then
+            mkdir -p "$INSTALLATION_PATH"
+        fi
     fi
     for ARG in "$@"
     do
