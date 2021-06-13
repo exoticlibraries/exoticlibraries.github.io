@@ -36,11 +36,14 @@ VERSION=v2.0
 LICENSE=MIT
 YEAR=2021
 AUTHOR="Adewale Azeez"
+BASE_BRANCH=main
 SELECTED_LIBRARIES=()
 EXOTIC_LIBRARIES=(
     libxtd
     libcester
     libmetaref
+    libcline
+    libfio
 )
 IS_ROOT=true
 ARG_MATCH=false
@@ -72,6 +75,14 @@ main() {
         elif [[ "--tmpfolder" == "$ARG_MATCH" ]]; then
             TMP_FOLDER=$EXTRACTED_ARG_VALUE
 
+        elif [[ "--basebranch" == "$ARG_MATCH" ]]; then
+            BASE_BRANCH=$EXTRACTED_ARG_VALUE
+
+        elif [[ "--all" == "$ARG_MATCH" ]]; then
+            for LIBRARY in ${EXOTIC_LIBRARIES[@]}; do
+                SELECTED_LIBRARIES+=($LIBRARY)
+            done
+
         else
             if [[ " ${ARG_MATCH[@]} " =~ "--" ]]; then 
                 fail_with_message "Unknow option '$ARG_MATCH'"
@@ -101,9 +112,11 @@ print_help() {
     echo ""
     echo "The OPTIONS include:"
     echo "-h --help          Display this help message and exit"
+    echo "--all              Install all exotic libraries"
     echo "--dontclean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
     echo "--installfolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
     echo "--tmpfolder=[FOLDER]      Specify the folder to download archive and tmp files, default is /tmp/"
+    echo "--basebranch=[FOLDER]     Specify the base branch to download from, default is 'main'"
     echo ""
     echo "Examples with download script"
     echo "./install.sh libcester libmetaref libxtd@dev"
@@ -134,7 +147,7 @@ install_libraries() {
     for LIBRARY in ${SELECTED_LIBRARIES[@]}; do
         ARG_MATCH=${LIBRARY%@*}
         BRANCH=${LIBRARY##*@}
-        if [ "$BRANCH" = "$ARG_MATCH" ]; then BRANCH=main; fi
+        if [ "$BRANCH" = "$ARG_MATCH" ]; then BRANCH=$BASE_BRANCH; fi
         poof_out_github_link_for_library $ARG_MATCH $BRANCH
         LIBRARY_ZIP_URL=$ARG_MATCH
         LIBRARY_NAME=${ARG_MATCH%/archive*}
@@ -144,7 +157,7 @@ install_libraries() {
     for LIBRARY in ${SELECTED_LIBRARIES[@]}; do
         ARG_MATCH=${LIBRARY%@*}
         BRANCH=${LIBRARY##*@}
-        if [ "$BRANCH" = "$ARG_MATCH" ]; then BRANCH=main; fi
+        if [ "$BRANCH" = "$ARG_MATCH" ]; then BRANCH=$BASE_BRANCH; fi
         LIBRARY_NAME=${ARG_MATCH%/archive*}
         LIBRARY_NAME=${LIBRARY_NAME##*/}
         detect_header_files_and_install $LIBRARY_NAME $BRANCH
