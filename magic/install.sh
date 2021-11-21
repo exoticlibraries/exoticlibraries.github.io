@@ -30,7 +30,7 @@
 #     bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) https://github.com/nothings/stb@master
 # 
 # License: MIT
-# Author: Adewale Azeez <azeezadewale98@gmail.com>
+# Author: Adewale Azeez <iamthecarisma@gmail.com>
 
 VERSION=v2.0
 LICENSE=MIT

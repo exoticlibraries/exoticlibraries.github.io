@@ -9,8 +9,9 @@ html_theme = 'water'
 master_doc = 'index'
 html_favicon = 'assets/images/libcester/exoticlibs.png'
 html_static_path = ['_static']
-html_context = {
-    'css_files': ['_static/css/exoticlibraries.css']
+
+html_css_files = {
+    'css/exoticlibraries.css'
 }
 html_js_files = [
     'js/exoticlibraries.js',

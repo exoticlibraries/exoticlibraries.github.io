@@ -49,4 +49,37 @@
         </div>
     </div>
 </div>
+
+<div class="project main-project">
+    <img class="logo" src="https://raw.githubusercontent.com/exoticlibraries/libcline/main/docs/libcline.png" alt="libcline logo">
+    <br/><span class="title">libcline</span>
+    <hr class="project-rule"/>
+    <p class="description">
+        C99 library for building powerful and interactive command-line applications in C with easy-to-use APIs.
+    </p>
+    <div class="bottomer">
+        <span class="tech-used">C99</span><br>
+        <div class="links">
+            <a target="_blank" href="https://github.com/exoticlibraries/libcline">Github <i class="fas fa-external-link-alt"></i></a> 
+            <a target="_blank" href="https://exoticlibraries.github.io/libcline">Website <i class="fas fa-external-link-alt"></i></i></a> 
+        </div>
+    </div>
+</div>
+
+<div class="project main-project">
+    <img class="logo" src="https://raw.githubusercontent.com/exoticlibraries/liblogax/dev/docs/liblogax.png" alt="liblogax logo">
+    <br/><span class="title">liblogax</span>
+    <hr class="project-rule"/>
+    <p class="description">
+        Blazing fast, simple and modular header-only logging library with zero allocation for C and C++, implemented in C90. 
+		Allow logging into various output formats such as Key-Value and JSON.
+    </p>
+    <div class="bottomer">
+        <span class="tech-used">C90</span><br>
+        <div class="links">
+            <a target="_blank" href="https://github.com/exoticlibraries/liblogax">Github <i class="fas fa-external-link-alt"></i></a> 
+            <a target="_blank" href="https://exoticlibraries.github.io/liblogax">Website <i class="fas fa-external-link-alt"></i></i></a> 
+        </div>
+    </div>
+</div>
 </div>
