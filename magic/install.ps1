@@ -30,7 +30,7 @@
 #     & $([scriptblock]::Create((New-Object Net.WebClient).DownloadString("https://exoticlibraries.github.io/magic/install.ps1"))) https://github.com/nothings/stb@master
 # 
 # License: MIT
-# Author: Adewale Azeez <azeezadewale98@gmail.com>
+# Author: Adewale Azeez <iamthecarisma@gmail.com>
 
 $Global:VERSION="v2.0"
 $Global:LICENSE="MIT"
@@ -217,6 +217,8 @@ Function Detect-Installed-Compilers-Include-Paths {
     Find-Include-Folder-With-Path "C:\TDM-GCC-64\"
     Find-Include-Folder-With-Path "C:\MingW\"
     Find-Include-Folder-With-Path "C:\MingW64\"
+    Find-Include-Folder-With-Path "C:\msys64\mingw\"
+    Find-Include-Folder-With-Path "C:\msys64\mingw64\"
 }
 
 Function Install-Libraries {

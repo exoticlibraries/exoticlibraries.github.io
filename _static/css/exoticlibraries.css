@@ -208,8 +208,22 @@
     color: #0f6091 !important;
 }
 
+#new-releases {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#featured-blogs {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .featured-blog  {
-    margin-bottom: 20px;
+	max-width: 300px;
+	margin-bottom: 20px;
+	margin-right: 20px;
 }
 
 .featured-blog .heading {

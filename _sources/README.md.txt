@@ -31,22 +31,7 @@
 </div>
 <div style="margin-top:520px;"></div>
 
-<div class="two-sided">
-    <div class="left-side">
-        <h3 class="title">New Releases</h3>
-        <br/>
-        <div id="new-releases">
-        </div>
-    </div>
-    <div class="right-side">
-        <h3 class="title">From the blog</h3>
-        <br/>
-        <div id="featured-blogs">
-        </div>
-    </div>
-</div>
-
-# <span style="display:table;margin:0 auto;margin-top:100px;">Featured Libraries</span>
+# <span style="display:table;margin:0 auto;margin-top:0px;">Featured Libraries</span>
 
 <div class="all-projects" style="justify-content: center;">
 <div class="project main-project">
@@ -106,5 +91,28 @@
 
 </div>
 
-<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/libraries.html"> View All Libraries </a>
-<script>treatLandingVariables();</script>
+<a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/programs.html"> View All Programs </a>
+
+<!--<div class="two-sided">
+    <div class="left-side">
+        <h3 class="title">New Releases</h3>
+        <br/>
+        <div id="new-releases">
+        </div>
+    </div>
+    <div class="right-side">
+        <h3 class="title">From the blog</h3>
+        <br/>
+        <div id="featured-blogs">
+        </div>
+    </div>
+</div>-->
+
+<div>
+	<h3 class="title">From the blog</h3>
+	<br/>
+	<div id="featured-blogs">
+	</div>
+</div>
+
+<script>treatLandingVariables();treatLandingVariables();</script>

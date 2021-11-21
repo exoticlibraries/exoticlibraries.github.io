@@ -64,7 +64,7 @@ function treatLandingVariables() {
     }
     
     //new releases
-    var count = 0;
+    /*var count = 0;
     for (var release of LatestReleases) {
         var releaseHTML = `<div> <a class="heading" target="_blank" href="${release.link}">${release.project} ${release.version} - ${release.date}</a></div>`;
         
@@ -78,7 +78,7 @@ function treatLandingVariables() {
             currentTarget: document.getElementById("windows-install-button")
         };
         openInstallTab(event, 'windows-install-content');
-    }
+    }*/
 }
 
 function injectBlogSidemenu() {
