@@ -323,7 +323,7 @@ Function Add-Exotic-Libraries {
     $Global:EXOTIC_LIBRARIES.Add("libcester")
     $Global:EXOTIC_LIBRARIES.Add("libmetaref")
     $Global:EXOTIC_LIBRARIES.Add("libcline")
-    $Global:EXOTIC_LIBRARIES.Add("libfio")
+    $Global:EXOTIC_LIBRARIES.Add("liblogax")
 }
 
 Function Fail-With-Message {

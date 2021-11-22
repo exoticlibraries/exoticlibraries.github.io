@@ -71,14 +71,14 @@ function treatLandingVariables() {
         if (count > 10) { break; }
         document.getElementById("new-releases").innerHTML += releaseHTML;
         count++;
-    }
+    }*/
 
     if (navigator.platform.indexOf('Win') > -1) {
         let event = {
             currentTarget: document.getElementById("windows-install-button")
         };
         openInstallTab(event, 'windows-install-content');
-    }*/
+    }
 }
 
 function injectBlogSidemenu() {

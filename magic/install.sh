@@ -43,7 +43,7 @@ EXOTIC_LIBRARIES=(
     libcester
     libmetaref
     libcline
-    libfio
+    liblogax
 )
 IS_ROOT=true
 ARG_MATCH=false
