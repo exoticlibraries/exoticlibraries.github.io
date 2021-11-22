@@ -3,7 +3,7 @@
 
 <div class="all-projects">
 <div class="project main-project">
-    <img class="logo" src="https://avatars1.githubusercontent.com/u/57629577" alt="libxtd logo">
+    <img class="logo" src="https://raw.githubusercontent.com/exoticlibraries/libxtd/main/docs/libxtd.png" alt="libxtd logo">
     <br/><span class="title">libxtd</span>
     <hr class="project-rule"/>
     <p class="description">

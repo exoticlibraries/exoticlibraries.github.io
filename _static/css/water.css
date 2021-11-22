@@ -449,3 +449,7 @@ div.viewcode-block:target {
     color: #727273 !important; /* theme_link_color */
 }
 
+.highlighted {
+	background-color: yellow;
+}
+

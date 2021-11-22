@@ -33,9 +33,9 @@
 
 # <span style="display:table;margin:0 auto;margin-top:0px;">Featured Libraries</span>
 
-<div class="all-projects" style="justify-content: center;">
+<div class="all-projects" style="_justify-content: center;">
 <div class="project main-project">
-    <img class="logo" style="max-width: 100px;max-height: 100px;" src="https://avatars1.githubusercontent.com/u/57629577" alt="libxtd logo">
+    <img class="logo" style="max-width: 100px;max-height: 100px;" src="https://raw.githubusercontent.com/exoticlibraries/libxtd/main/docs/libxtd.png" alt="libxtd logo">
     <br/><span class="title">libxtd</span>
     <hr class="project-rule"/>
     <p class="description">
@@ -87,8 +87,37 @@
 
 # <span style="display:table;margin:0 auto;margin-top:100px;">Featured Applications</span>
 
-<div class="all-projects" style="justify-content: center;">
-
+<div class="all-projects" style="_justify-content: center;">
+<div class="project main-project">
+	<img class="logo" src="https://raw.githubusercontent.com/exoticlibraries/exotic-action/main/exotic-action.png" alt="Exotic Action logo">
+	<br/><span class="title">Exotic Action</span>
+	<hr class="project-rule"/>
+	<p class="description">
+		Download exotic libraries into your C/C++ GitHub Action environment. Also, run regression testing on your project.
+	</p>
+	<div class="bottomer">
+		<span class="tech-used">JavaScript</span><br>
+		<div class="links">
+			<a target="_blank" href="https://github.com/exoticlibraries/exotic-action">Github <i class="fas fa-external-link-alt"></i></a> 
+			<a target="_blank" href="https://github.com/marketplace/actions/exotic-action">Website <i class="fas fa-external-link-alt"></i></i></a> 
+		</div>
+	</div>
+</div>
+<div class="project main-project">
+	<img class="logo" src="https://raw.githubusercontent.com/Thecarisma/Cronux/main/docs/cronux.png" alt="Exotic libraries logo">
+	<br/><span class="title">Installation Scripts</span>
+	<hr class="project-rule"/>
+	<p class="description">
+		Download exotic libraries or any headers only libraries hosted on github without any prerequisite using remote bash and powershell scripts.
+	</p>
+	<div class="bottomer">
+		<span class="tech-used">Bash, Powershell</span><br>
+		<div class="links">
+			<a target="_blank" href="https://github.com/exoticlibraries/exoticlibraries.github.io/tree/main/magic">Github <i class="fas fa-external-link-alt"></i></a> 
+			<a href="https://exoticlibraries.github.io/blog/Feb-2021/magic_scripts.html">Website <i class="fas fa-external-link-alt"></i></i></a> 
+		</div>
+	</div>
+</div>
 </div>
 
 <a class="reference navigator" style="display:table;margin:0 auto;padding:10px 40px 10px 40px;" href="./pages/programs.html"> View All Programs </a>
@@ -115,4 +144,4 @@
 	</div>
 </div>
 
-<script>treatLandingVariables();treatLandingVariables();</script>
+<script>treatLandingVariables();</script>
