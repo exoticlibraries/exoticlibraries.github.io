@@ -7,6 +7,6 @@ Exotic Libraries Blog
    :maxdepth: 1
 
    /blog/Sep-2020/index
-   /blog/Feb-2021/index
+   /blog/Feb-2022/index
 
 

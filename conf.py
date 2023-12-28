@@ -1,7 +1,7 @@
 import themata
 
 project = 'Exotic Libraries'
-copyright = '2021, Exotic Libraries - MIT License'
+copyright = '2022, Exotic Libraries - MIT License'
 author = 'Exotic Libraries Contributors'
 
 html_theme_path = [themata.get_html_theme_path()]

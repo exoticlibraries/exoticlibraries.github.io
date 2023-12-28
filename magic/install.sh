@@ -34,7 +34,7 @@
 
 VERSION=v2.0
 LICENSE=MIT
-YEAR=2021
+YEAR=2022
 AUTHOR="Adewale Azeez"
 BASE_BRANCH=main
 SELECTED_LIBRARIES=()
@@ -83,6 +83,10 @@ main() {
         elif [[ "--basebranch" == "$ARG_MATCH" ]]; then
             BASE_BRANCH=$EXTRACTED_ARG_VALUE
 
+        elif [[ "--gcclib2clang" == "$ARG_MATCH" ]]; then
+            copy_gcc_libs_to_clang
+            return
+
         elif [[ "--all" == "$ARG_MATCH" ]]; then
             for LIBRARY in ${EXOTIC_LIBRARIES[@]}; do
                 SELECTED_LIBRARIES+=($LIBRARY)
@@ -119,6 +123,7 @@ print_help() {
     echo "-h --help          Display this help message and exit"
     echo "--all              Install all exotic libraries"
     echo "--dontclean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
+    echo "--gcclib2clang     Make c and c++ header in gcc installation available for clang"
     echo "--installfolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
     echo "--tmpfolder=[FOLDER]      Specify the folder to download archive and tmp files, default is /tmp/"
     echo "--basebranch=[FOLDER]     Specify the base branch to download from, default is 'main'"
@@ -133,6 +138,10 @@ print_help() {
     echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --dontclean MrFrenik/gunslinger@master"
     echo "bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --installfolder=./ https://github.com/nothings/stb@master"
     exit 0
+}
+
+copy_gcc_libs_to_clang() {
+    echo "The '--gcclib2clang' command only performs on Windows"
 }
 
 validate_paths() {
