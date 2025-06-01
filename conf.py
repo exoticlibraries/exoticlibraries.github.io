@@ -4,7 +4,6 @@ project = 'Exotic Libraries'
 copyright = '2022, Exotic Libraries - MIT License'
 author = 'Exotic Libraries Contributors'
 
-html_theme_path = [themata.get_html_theme_path()]
 html_theme = 'water'
 master_doc = 'index'
 html_favicon = 'assets/images/libcester/exoticlibs.png'
