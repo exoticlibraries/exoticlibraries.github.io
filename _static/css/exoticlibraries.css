@@ -72,6 +72,10 @@
     border-top-left-radius: 5px;
 }
 
+.documentwrapper {
+    max-width: 60%;
+}
+
 .border-radius-top-right {
     border-top-right-radius: 5px;
 }

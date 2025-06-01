@@ -28,7 +28,7 @@
             <span class="tech-used">Bash, Powershell</span><br>
             <div class="links">
                 <a target="_blank" href="https://github.com/exoticlibraries/exoticlibraries.github.io/tree/main/magic">Github <i class="fas fa-external-link-alt"></i></a> 
-                <a href="https://exoticlibraries.github.io/blog/Feb-2021/magic_scripts.html">Website <i class="fas fa-external-link-alt"></i></i></a> 
+                <a href="https://exoticlibraries.github.io/blog/Feb-2022/magic_scripts.html">Website <i class="fas fa-external-link-alt"></i></i></a> 
             </div>
         </div>
     </div>

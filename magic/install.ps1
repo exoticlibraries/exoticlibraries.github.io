@@ -34,7 +34,7 @@
 
 $Global:VERSION="v2.0"
 $Global:LICENSE="MIT"
-$Global:YEAR="2021"
+$Global:YEAR="2022"
 $Global:AUTHOR="Adewale Azeez"
 $Global:BASE_BRANCH="main"
 $Global:SELECTED_LIBRARIES = New-Object System.Collections.Generic.List[string]
@@ -74,6 +74,10 @@ Function Main {
         } ElseIf ($Global:ARG_MATCH -eq "--BaseBranch") {
             $Global:BASE_BRANCH = $Global:EXTRACTED_ARG_VALUE
             
+        } ElseIf ($Global:ARG_MATCH -eq "--GccLib2Clang") {
+            Copy-GCC-Libs-To-Clang
+            Break
+            
         } ElseIf ($Global:ARG_MATCH -eq "--All") {
             $Global:EXOTIC_LIBRARIES | ForEach-Object {
                 $Global:SELECTED_LIBRARIES.Add($_)
@@ -111,6 +115,7 @@ Function Print-Help {
     Write-Output "-H --Help          Display this help message and exit"
     Write-Output "--All              Install all exotic libraries"
     Write-Output "--DontClean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
+    Write-Output "--GccLib2Clang     Make c and c++ header in gcc installation available for clang"
     Write-Output "--InstallFolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
     Write-Output "--TmpFolder=[FOLDER]     Specify the folder to download archive and tmp files, default is /tmp/"
     Write-Output "--BaseBranch=[BRANCH]    Specify the base branch to download from, default is 'main'"
@@ -124,6 +129,28 @@ Function Print-Help {
     Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) libcester libmetaref libxtd@dev"
     Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) --DontClean MrFrenik/gunslinger@master"
     Write-Output "`& `$([scriptblock]::Create((New-Object Net.WebClient).DownloadString(`"https://exoticlibraries.github.io/magic/install.ps1`"))) --InstallFolder=./ https://github.com/nothings/stb@master"
+}
+
+Function Copy-GCC-Libs-To-Clang {
+    Write-Output "Preparing to copy the libs and include files from Mingw GCC installation to LLVM Clang folder"
+    $GCC_INCLUDE_FOLDER=[System.IO.Directory]::GetParent($(Find-Include-Folder-With-Command "gcc -v")).FullName
+    $CLANG_INCLUDE_FOLDER=[System.IO.Directory]::GetParent($(Find-Include-Folder-With-Command "clang -v")).FullName
+    If ( -not [System.IO.Directory]::Exists($GCC_INCLUDE_FOLDER)) {
+        Fail-With-Message "The gcc installation path '$_' does not exist"
+    }
+    If ( -not [System.IO.Directory]::Exists($CLANG_INCLUDE_FOLDER)) {
+        Fail-With-Message "The clang installation path '$_' does not exist"
+    }
+    If ([System.IO.Directory]::Exists("$GCC_INCLUDE_FOLDER/include")) {
+        robocopy /xc /xn /xo "$GCC_INCLUDE_FOLDER/include" "$CLANG_INCLUDE_FOLDER/include"
+    }
+    If ([System.IO.Directory]::Exists("$GCC_INCLUDE_FOLDER/lib")) {
+        robocopy /xc /xn /xo "$GCC_INCLUDE_FOLDER/lib" "$CLANG_INCLUDE_FOLDER/lib"
+    }
+    If ([System.IO.Directory]::Exists("$GCC_INCLUDE_FOLDER/lib32")) {
+        robocopy /xc /xn /xo "$GCC_INCLUDE_FOLDER/lib32" "$CLANG_INCLUDE_FOLDER/lib32"
+    }
+    Write-Output "Done setting up lib for clang from GCC"
 }
 
 Function Validate-Paths {
@@ -179,6 +206,7 @@ Function Find-Include-Folder-With-Command {
     If ($APath) {
         $Global:INSTALLATION_PATHS.Add($APath)
     }
+    Return $APath
 }
 
 Function Find-Include-Folder-With-Path {

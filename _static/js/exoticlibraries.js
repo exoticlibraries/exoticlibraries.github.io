@@ -6,8 +6,8 @@ const LatestBlogPosts = [
         "title": "Installation Scripts",
         "excerpt": `The purpose of the script is to be able to download, build (when needed), and install the library without any hassle at all using remote scripts.
         Currently, the script can only install headers only libraries from github.`,
-        "date": "08 February, 2021",
-        "link": "/blog/Feb-2021/magic_scripts.html",
+        "date": "08 February, 2022",
+        "link": "/blog/Feb-2022/magic_scripts.html",
         "image": "https://miro.medium.com/max/700/1*U-R58ahr5dtAvtSLGK2wXg.png"
     },
     {
