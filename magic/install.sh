@@ -29,6 +29,12 @@
 # To install stb from github from master branch
 #     bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) https://github.com/nothings/stb@master
 # 
+# To install uWebSockets from github from master branch and specify the include folders
+#     bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --source-folders=src,examples https://github.com/uNetworking/uWebSockets@master 
+# 
+# To install uWebSockets from github from master branch and specify the include folders and ignore hierarchy in install folder
+#     bash <(curl -s https://exoticlibraries.github.io/magic/install.sh) --source-folders=src,examples https://github.com/uNetworking/uWebSockets@master --flat
+# 
 # License: MIT
 # Author: Adewale Azeez <iamthecarisma@gmail.com>
 
@@ -47,10 +53,13 @@ EXOTIC_LIBRARIES=(
 )
 IS_ROOT=true
 ARG_MATCH=false
+SOURCE_FOLDERS=()
+EXTRACTED_ARG_VALUE=
 EXTRACTED_ARG_VALUE=
 INSTALLATION_PATH=/usr/local/include
 TMP_FOLDER=/tmp/
 CLEANUP=true
+FLAT_INSTALLATION=false
 
 echo "Exotic Libraries Magic Install Script $VERSION"
 echo "The $LICENSE License Copyright (c) $YEAR $AUTHOR"
@@ -71,6 +80,9 @@ main() {
         if [[ "-h" == "$ARG_MATCH" || "--help" == "$ARG_MATCH" ]]; then
             print_help
 
+        elif [[ "--flat" == "$ARG_MATCH" ]]; then
+            FLAT_INSTALLATION=true
+
         elif [[ "--dontclean" == "$ARG_MATCH" ]]; then
             CLEANUP=false
 
@@ -82,6 +94,9 @@ main() {
 
         elif [[ "--basebranch" == "$ARG_MATCH" ]]; then
             BASE_BRANCH=$EXTRACTED_ARG_VALUE
+
+        elif [[ "--source-folders" == "$ARG_MATCH" ]]; then
+            IFS=',' read -ra SOURCE_FOLDERS <<< "$EXTRACTED_ARG_VALUE"
 
         elif [[ "--gcclib2clang" == "$ARG_MATCH" ]]; then
             copy_gcc_libs_to_clang
@@ -122,11 +137,13 @@ print_help() {
     echo "The OPTIONS include:"
     echo "-h --help          Display this help message and exit"
     echo "--all              Install all exotic libraries"
+    echo "--flat             Install all headers and source in the install folder without source folder hierarchy"
     echo "--dontclean        Skip cleanup , leave the downloaded and extracted archive in the temp folder"
     echo "--gcclib2clang     Make c and c++ header in gcc installation available for clang"
     echo "--installfolder=[FOLDER] Specify the folder to install the library into, default is /usr/local/include"
     echo "--tmpfolder=[FOLDER]      Specify the folder to download archive and tmp files, default is /tmp/"
     echo "--basebranch=[FOLDER]     Specify the base branch to download from, default is 'main'"
+    echo "--source-folders=[FOLDER,..]     Specify the folders to search for the header and source files"
     echo ""
     echo "Examples with download script"
     echo "./install.sh libcester libmetaref libxtd@dev"
@@ -189,12 +206,18 @@ detect_header_files_and_install() {
     REPO_FOLDER="$TMP_FOLDER/EXOITIC_SCRIPT_INSTALLER/extracted_archive/$1/$1-$2"
     REPO_FOLDER_ITER="$TMP_FOLDER/EXOITIC_SCRIPT_INSTALLER/extracted_archive/$1/$1-$2/*/"
     FOLDERS_WITH_HEADERS_FILE=()
-    for DIR in $REPO_FOLDER_ITER; do
-        HAS_C_HEADER=$(find $DIR -name *.h)
-        HAS_CPP_HEADER=$(find $DIR -name *.hpp)
-        if ([ ! -z "$HAS_C_HEADER" ] || [ ! -z "$HAS_CPP_HEADER" ]) && [[ ! " ${DIR[@]} " =~ "test/" ]]; then
-            FOLDERS_WITH_HEADERS_FILE+=($DIR)
-        fi
+    if [[ $SOURCE_FOLDERS == "" ]];
+    then
+        for DIR in $REPO_FOLDER_ITER; do
+            HAS_C_HEADER=$(find $DIR -name *.h)
+            HAS_CPP_HEADER=$(find $DIR -name *.hpp)
+            if ([ ! -z "$HAS_C_HEADER" ] || [ ! -z "$HAS_CPP_HEADER" ]) && [[ ! " ${DIR[@]} " =~ "test/" ]]; then
+                FOLDERS_WITH_HEADERS_FILE+=($DIR)
+            fi
+        done
+    fi
+    for SOURCE_FOLDER in "${SOURCE_FOLDERS[@]}"; do
+        FOLDERS_WITH_HEADERS_FILE+=($TMP_FOLDER/EXOITIC_SCRIPT_INSTALLER/extracted_archive/$1/$1-$2/$SOURCE_FOLDER)
     done
     echo "Installing $1..."
     cp $REPO_FOLDER/*.h $INSTALLATION_PATH 2> /dev/null
@@ -203,8 +226,11 @@ detect_header_files_and_install() {
         if [[ " ${INCLUDE_FOLDER[@]} " =~ "/include" ]]; then
             cp -r $INCLUDE_FOLDER/* $INSTALLATION_PATH
         else
-            FOLDER_NAME=$(basename $INCLUDE_FOLDER)
-            mkdir -p $INSTALLATION_PATH/$FOLDER_NAME
+            FOLDER_NAME=
+            if [ "$FLAT_INSTALLATION" == "false" ]; then
+                FOLDER_NAME=$(basename $INCLUDE_FOLDER)
+                mkdir -p $INSTALLATION_PATH/$FOLDER_NAME
+            fi
             cp -r $INCLUDE_FOLDER/* $INSTALLATION_PATH/$FOLDER_NAME
         fi
     done
