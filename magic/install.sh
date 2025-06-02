@@ -263,7 +263,6 @@ detect_header_files_and_install() {
         fi
     done
 
-    echo "Installing binaries 3hjfg3ghf2ghf... $FOLDERS_WITH_ARCHIVED_BINARIES_FILE"
     install_binaries_files $REPO_FOLDER $FOLDERS_WITH_ARCHIVED_BINARIES_FILE
 }
 
